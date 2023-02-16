@@ -3,7 +3,7 @@
 /**
  * main - starting point of the program
  *
- * Description: print the size of various data type 
+ * Description: print the size of various data type
  * Return: 0 if program execute properly,else a no non-zero number
  */
 int main(void)
