@@ -10,7 +10,7 @@ int main(void)
 	char Letters;
 
 	for (Letters = 'a'; Letters <= 'z'; Letters++)
-                putchar(Letters);
+       		putchar(Letters);
 
 	for (Letters = 'A'; Letters <= 'Z'; Letters++)
 		putchar(Letters);
