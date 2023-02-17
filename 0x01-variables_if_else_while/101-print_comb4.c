@@ -21,7 +21,7 @@ int main(void)
 					putchar(p);
 					putchar(o);
 					putchar(m);
-					if (p !=55 || o != 56)
+					if (p != 55 || o != 56)
 					{
 						putchar(',');
 						putchar(' ');
