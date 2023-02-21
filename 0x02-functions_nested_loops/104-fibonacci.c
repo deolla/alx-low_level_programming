@@ -18,7 +18,7 @@ int main(void)
 	{
 		sum = fib + fib1;
 		printf("%lu, ", sum);
-		fib = fib2;
+		fib = fib1;
 		fib1 = sum;
 	}
 	fib_half1 = fib / 10000000000;
