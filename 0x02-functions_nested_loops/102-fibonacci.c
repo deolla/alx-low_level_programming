@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - Prints the first 50 Fibonacci numbers, starting with 1 and 2,
@@ -11,7 +12,7 @@ int main(void)
 	int i;
 	unsigned long fib, fib1, fib2;
 
-	fib1 = 1, Fib2 = 0;
+	fib1 = 1, fib2 = 0;
 
 	for (i = 0; i < 50; i++)
 	{
