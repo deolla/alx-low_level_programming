@@ -4,7 +4,7 @@
 * main - tests function that prints if integer is positive or negative
 *
 * Description: this main file is a test for a postitive_or_negative() function
-* Return: Always 0 (Success)
+* Return: 0
 */
 
 int main(void)
