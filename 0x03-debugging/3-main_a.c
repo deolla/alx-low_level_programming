@@ -21,9 +21,9 @@ int main(void)
 
 	day = convert_day(month, day);
 
-       	print_remaining_days(month, day, year);
-   
- 	month = 2;
+	print_remaining_days(month, day, year);
+
+	month = 2;
 	day = 29;
 	year = 1997;
 
@@ -33,6 +33,6 @@ int main(void)
 
 	print_remaining_days(month, day, year);
 
-    return (0);
+	return (0);
 }
 
