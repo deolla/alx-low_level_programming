@@ -3,7 +3,7 @@
 /**
 * main - tests function that prints if integer is positive or negative
 *
-* Description: this main file is a test for a postitive_or_negative() function
+* Description: prints if integer is positive or negative
 * Return: 0
 */
 
