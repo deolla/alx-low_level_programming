@@ -5,7 +5,7 @@
  * @n: times straight line is printed.
  * Return: no return.
  */
-void print_line(int n)
+void print_line(int n);
 {
 	int i;
 
