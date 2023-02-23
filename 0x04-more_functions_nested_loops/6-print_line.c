@@ -3,15 +3,16 @@
 /**
  * print_line - prints straight line n times.
  * @n: times straight line is printed.
- * Return: no return.
+ * Return: no return.i
  */
 void print_line(int n);
 {
-	int i;
+	int num;
 
-	for (i = 0; i < n; i++)
+	for (num = 0; num <= 9; num++)
 	{
-		_putchar(95);
+		if (num != 4 && num != 2)
+			_putchar(num + '0');
 	}
 	_putchar('\n');
 }
