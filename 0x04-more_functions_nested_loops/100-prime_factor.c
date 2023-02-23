@@ -7,11 +7,12 @@
 int main(void)
 {
 	long int n, i;
+
 	n = 612852475143;
 
-	for (i = 2; i <= n; i++);
+	for (i = 2; i <= n; i++)
 	{
-		if (n % i == 0);
+		if (n % i == 0)
 		{
 			n = n / i;
 			i--;
