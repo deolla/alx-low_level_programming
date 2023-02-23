@@ -7,12 +7,11 @@
  */
 void print_line(int n);
 {
-	int num;
+	int times;
 
-	for (num = 0; num <= 9; num++)
+	for (times = 0; times < n; times++)
 	{
-		if (num != 4 && num != 2)
-			_putchar(num + '0');
+		_putchar('_');
 	}
 	_putchar('\n');
 }
