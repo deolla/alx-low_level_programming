@@ -7,13 +7,12 @@
  */
 int _isdigit(int c)
 {
-	char num;
+	char digit;
 
-	for (num >= 0; num <= 10; num++)
+	for (digit = '0'; digit <= '9'; digit++)
 	{
-		if (c == num)
+		if (digit == c)
 			return (1);
 	}
-
 	return (0);
 }
