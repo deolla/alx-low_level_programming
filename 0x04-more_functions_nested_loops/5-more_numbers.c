@@ -8,17 +8,22 @@
  */
 void more_numbers(void)
 {
-	int n, m;
+	int cycle, num;
 
-	for (n = 0; n <= 9; n++)
+	for (cycle = 1; cycle <= 10; cycle++)
 	{
-		for (m = 0; m < 14; m++)
+		for (num = 0; num <= 14; num++)
 		{
-			if (m >= 10)
-			{
-				_putchar((m / 10) + '0');
-			}
-			_putchar((m % 10) + '0');
+			int tens, ones;
+
+			tens = num / 10;
+			ones = num % 10;
+
+		if (tens != 0)
+			_putchar (tens + '0');
+
+			_putchar (ones + '0');
+
 		}
 		_putchar('\n');
 	}
