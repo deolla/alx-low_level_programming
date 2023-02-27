@@ -23,6 +23,6 @@ int main(void)
 		c = c + r;
 		printf("%c", r);
 	}
-	printf("%c\n", r);
+	printf("%c\n", (-c));
 	return (0);
 }
