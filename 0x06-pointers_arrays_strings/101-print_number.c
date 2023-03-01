@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * print_number - a function that prints an integer.
+ * print_number - function that prints an integer.
  * @n: the integer to print
  *
+ * Description: prints an integer
  * Return: the integer.
  */
 void print_number(int n)
@@ -13,7 +14,6 @@ void print_number(int n)
 		n = -n;
 		_putchar('-');
 	}
-
 	if (n / 10)
 	{
 		print_number(n / 10);
