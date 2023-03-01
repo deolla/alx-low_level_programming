@@ -3,31 +3,53 @@
 
 /**
  * infinite_add - function with 4 arguments
- * @n1: char type pointer argument
- * @n2: char type pointer argument
- * @r: char type pointer argument
- * @size_r: int type argument
+ * @n1: number
+ * @n2: number
+ * @r: buffer that the function will use to store the result
+ * @size_r: the buffer size
  *
- * Return: sum of two integers
+ * Return: r
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int count, count1;
+	int u0 = 0, u1 = 0, ops, ops1, dir0, dir1, ups = 0;
 
-	while (n1[count] != '\0')
-		count++;
-	while (n2[count1] != '\0')
-		count1++;
-
-	*r = *(r + size_r);
-	while (n1[count] > 0 || n1[count1] > 0)
+	while (*(n1 + u0) != '\0')
+		u0++;
+	while (*(n2 + u1) != '\0')
+		u1++;
+	if (u0 >= u1)
+		ops1 = u0;
+	else
+		ops1 = u1;
+	if (size_r <= ops1 + 1)
+		return (0);
+	r[ops1 + 1] = '\0';
+	u0--, u1--, size_r--;
+	dir0 = *(n1 + u0) - 48, dir0 = *(n2 + u1) - 48;
+	while (ops1 >= 0)
 	{
-		if (n1[count] + n2[count1] > 0)
-			*r = n1[count - 1] + n2[count1 - 1] + 1;
+		ops = dir0 + dir1 + ups;
+		if (ops >= 10)
+			ups = ops / 10;
 		else
-			*r = n1[count] + n2[count1];
-		count--;
-		count1--;
+			ups = 0;
+		if (ops > 0)
+			*(r + ops1) = (ops % 10) + 48;
+		else
+			*(r + ops1) = '0';
+		if (u0 > 0)
+			u0--, dir0 = *(n1 + u0) - 48;
+		else
+			dir0 = 0;
+		if (u1 > 0)
+			u1--, dir1 = *(n2 + u1) - 48;
+		else
+			dir1 = 0;
+		ops1--, size_r--;
 	}
-	return (r);
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
