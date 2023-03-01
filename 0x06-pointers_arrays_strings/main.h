@@ -12,4 +12,5 @@ char *cap_string(char *n);
 char *leet(char *q);
 char *rot13(char *stir);
 void print_number(int n);
+int main(void);
 #endif /* MAIN_H */
