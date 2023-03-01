@@ -8,13 +8,14 @@
  */
 char *rot13(char *str)
 {
-	int a = 0, b = 0;
-
+	int a, b;
 	char upper[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
+	a = 0;
 	while (str[a] != '\0')
 	{
+		b = 0;
 		while (upper[b] != '\0')
 		{
 			if (str[a] == upper[b])
