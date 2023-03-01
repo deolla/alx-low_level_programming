@@ -15,7 +15,7 @@ char *string_toupper(char *m)
 
 	while (m[n] != '\0')
 	{
-		if (m[n] >= 99 && m[n] <= 130)
+		if (m[n] >= 97 && m[n] <= 122)
 		{
 			m[n] = m[n] - 32;
 		}
