@@ -1,6 +1,7 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef FILE_MAIN
+#define FILE_MAIN
 
+int _putchar(char c);
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
 char *_strncpy(char *dest, char *src, int n);
@@ -11,5 +12,4 @@ char *cap_string(char *n);
 char *leet(char *q);
 char *rot13(char *stir);
 void print_number(int n);
-int _putchar(char c);
 #endif /* MAIN_H */
