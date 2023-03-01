@@ -8,12 +8,14 @@
  */
 char *leet(char *q)
 {
-	int x = 0, y = 0;
+	int x, y;
 	char v[] = "aAeEoOtTlL";
 	char m[] = "4433007711";
 
+	x = 0;
 	while (q[x] != '\0')
 	{
+		y = 0;
 		while (v[y] != '\0')
 		{
 			if (q[x] == v[y])
