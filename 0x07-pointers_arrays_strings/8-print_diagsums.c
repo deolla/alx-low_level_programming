@@ -18,6 +18,5 @@ void print_diagsums(int *a, int size)
 		if (m % (size - 1) == 0 && m != 0 && m < size * size - 1)
 		sum2 += *(a + m);
 	}
-	printf("Sum of the first diagonal is %d\n", sum1);
-	printf("Sum of the second diagonal is %d\n", sum2);
+	printf("%d, %d\n", sum1, sum2);
 }
