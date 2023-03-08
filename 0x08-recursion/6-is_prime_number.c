@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * num - helper function
+ * @sum: variable.
+ * @n: variable.
+ *
+ * Description: helper function for counter argument
+ * Return: 1 if prime, 0 else.
+ */
+int num(int sum, int n)
+{
+	if (n % sum ==  0 || n < 2)
+		return (0);
+	else if (n / sum == 1)
+		return (1);
+	else
+		return (num(sum + 1, n));
+}
+
+/**
  * is_prime_number -  a function that returns a value if
  * the input integer is a prime number.
  * @n: variable
@@ -10,16 +28,5 @@
  */
 int is_prime_number(int n)
 {
-	if (n <= 1)
-	{
-		return (0);
-	}
-	for (int u = 2; u <= sqrt(n); u++)
-	{
-		if (n % i == 0)
-		{
-			return (0);
-		}
-	}
-	return (1)
+	return (num(2, n));
 }
