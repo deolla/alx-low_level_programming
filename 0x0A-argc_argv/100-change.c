@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - a program that prints the minimum number of
@@ -13,69 +14,37 @@
  */
 int main(int argc, char **argv)
 {
-	long int sum, coin = 0;
-	int cent[5] = {25, 10, 5, 2, 1};
-
-	int u;
+	int cents, coins = 0;
 
 	if (argc != 2)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (1);
 	}
 
-	sum = atoi(argv[1]);
-
-	if (sum < 0)
+	cents = atoi(argv[1]);
+	while (cents >= 25)
 	{
-		puts("Error");
-		return (1);
+		coins++;
+		cents -= 25;
 	}
-
-	for (u = 0; u < 5; u++)
+	while (cents >= 10)
 	{
-		while (sum - cent[u] >= 0)
-		{
-			coin++;
-			sum -= cent[u];
-		}
+		coins++;
+		cents -= 10;
 	}
-
-	printf("%li\n", coin);
-
+	if (cents >= 5)
+	{
+		coins++;
+		cents -= 5;
+	}
+	while (cents >= 2)
+	{
+		coins++;
+		cents -= 2;
+	}
+	if (cents == 1)
+		coins++;
+	printf("%d\n", coins);
 	return (0);
-}
-
-/**
- * atoi - converts a string argument to an interger.
- * @s: pointer string.
- *
- * Return: string.
- */
-long int atoi(char *s)
-{
-	unsigned int fud;
-	int fod;
-
-	fod = 1;
-	fud = 0;
-
-	for (; *s; s++)
-	{
-		if (*s >= '0' && *s <= '9')
-		{
-			fud *= 10;
-			fud += *s - '0';
-		}
-		else if (fud > 0)
-		{
-			break;
-		}
-		else if (*s == '-')
-		{
-			fod = -fod;
-		}
-	}
-
-	return (fud * fod);
 }
