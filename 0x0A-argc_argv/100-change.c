@@ -9,7 +9,7 @@
  *
  * Description: prints the minimum number of
  * coins to make change for an amount of money.
- * Return: always 0 or 1.
+ * Return: 0 for success, 1 for error.
  */
 int main(int argc, char **argv)
 {
@@ -57,8 +57,8 @@ long int atoi(char *s)
 	unsigned int fud;
 	int fod;
 
-	fud = 0;
 	fod = 1;
+	fud = 0;
 
 	for (; *s; s++)
 	{
