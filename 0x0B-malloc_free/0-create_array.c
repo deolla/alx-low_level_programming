@@ -4,6 +4,9 @@
  * create_array - creates an array of chars.
  * @size: size of the array
  * @c: an array.
+ *
+ * Description: a function that creates an array of chars.
+ * Return: null if 0, null if fail.
  */
 char *create_array(unsigned int size, char c)
 {
@@ -18,7 +21,7 @@ char *create_array(unsigned int size, char c)
 	if (ray == NULL)
 	{
 		return (NULL);
-        }
+	}
 
 	for (i = 0; i < size; i++)
 	{
