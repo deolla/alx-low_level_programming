@@ -10,15 +10,15 @@
  */
 char *argstostr(int ac, char **av)
 {
-	unsigned int m, n, o, po;
-	char **sto;
+	int m, n, o, po;
+	char *sto;
 
 	if (ac == 0)
 		return (NULL);
 
 	for (m = n = 0; n < ac; n++)
 	{
-		if (av[i] == NULL)
+		if (av[n] == NULL)
 			return (NULL);
 
 		for (o = 0; av[n][o] != '\0'; o++)
