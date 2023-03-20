@@ -3,6 +3,7 @@
 
 /**
  * init_dog - initialize a variable of type.
+ * @d: pointer member.
  * @name: char member.
  * @age: float member.
  * @owner: char member.
