@@ -1,16 +1,17 @@
 section .data
+	fmt db "%s", 10, 0
 	msg db "Hello, Holberton",0xA
-	len equ $-msg
 
-section .text
+	section .text
+	extern printf
 	global main
 
 main:
-	mov eax, 4	; system call for write
-	mov ebx, 1	; file descriptor for stdout
-	mov ecx, msg	; pointer to string to write
-	mov edx, len	; lenght of string to write
-	int 0x80	; call kernel
-	mov eax, 1	; system call for exit
-	xor ebx, ebx	; return code
-	int 0x80	; call the kernel
+	push	rbp
+	mov		rsi, msg
+	mov		rdi, fmt
+	mov		rax, 0
+	call	printf
+	pop		rbp
+	mov		rax, 0
+	ret
