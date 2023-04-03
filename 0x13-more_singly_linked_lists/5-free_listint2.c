@@ -22,7 +22,7 @@ void free_listint2(listint_t **head)
 
 	tem = *head;
 
-	for (g = 0; tem != NULL; g++)
+	while (tem != NULL)
 	{
 		next = tem->next;
 		free(tem);
