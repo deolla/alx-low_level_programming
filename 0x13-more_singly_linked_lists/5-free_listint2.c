@@ -8,7 +8,7 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *tem, *pop;
+	listint_t *tem, *next;
 	int g;
 
 	if (*head == NULL || head == NULL)
@@ -20,9 +20,9 @@ void free_listint2(listint_t **head)
 
 	for (g = 0; tem != NULL; g++)
 	{
-		pop = tem->next;
+		next = tem->next;
 		free(tem);
-		tem = pop;
+		tem = next;
 	}
 	*head = NULL;
 }
