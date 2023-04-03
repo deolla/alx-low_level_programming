@@ -11,7 +11,11 @@ void free_listint2(listint_t **head)
 	listint_t *tem, *next;
 	int g;
 
-	if (*head == NULL || head == NULL)
+	if (*head == NULL)
+	{
+		return;
+	}
+	if (head == NULL)
 	{
 		return;
 	}
@@ -23,11 +27,6 @@ void free_listint2(listint_t **head)
 		next = tem->next;
 		free(tem);
 		tem = next;
-
-		if (head == NULL)
-		{
-			return;
-		}
 	}
 	*head = NULL;
 }
