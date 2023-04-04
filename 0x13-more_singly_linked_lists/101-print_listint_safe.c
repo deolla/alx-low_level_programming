@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * print_listint_safe - prints a listint_t linked list.
  * @head: double pointer.
@@ -8,7 +9,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 1;
-	const listint_t *help *pls;
+	const listint_t *help, *pls;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
