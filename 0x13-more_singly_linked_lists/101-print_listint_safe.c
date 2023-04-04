@@ -23,19 +23,19 @@ size_t looped_listint_len(const listint_t *head)
 		if (help == pls)
 		{
 			help = pls;
-			while(help != pls)
+			while (help != pls)
 			{
 				nodes++;
 				help = help->next;
 				pls = pls->next;
 			}
 			help = help->next;
-			while(help != pls)
+			while (help != pls)
 			{
 				nodes++;
 				help = help->next;
 			}
-			return(nodes);
+			return (nodes);
 		}
 		help = help->next;
 		pls = (pls->next)->next;
@@ -54,7 +54,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t nodes, f;
 
 	nodes = looped_listint_len(head);
-	if(nodes == 0)
+	if (nodes == 0)
 	{
 		for (; head != NULL; nodes++)
 		{
