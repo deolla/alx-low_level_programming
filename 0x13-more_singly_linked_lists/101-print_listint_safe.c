@@ -1,17 +1,18 @@
 #include "lists.h"
-size_t lop_listint_len(const listint_t *head);
+#include <stdio.h>
+size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
 /**
- * lop_listint_len - prints a listint_t linked list.
+ * looped_listint_len - prints a listint_t linked list.
  * @head: double pointer.
  *
- * Return: number of nodes.
+ * Return: 0.
  */
-size_t lop_listint_len(const listint_t *head)
+size_t looped_listint_len(const listint_t *head)
 {
-	size_t count = 1;
 	const listint_t *help, *pls;
+	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
@@ -25,22 +26,21 @@ size_t lop_listint_len(const listint_t *head)
 			help = pls;
 			while(help != pls)
 			{
-				count++;
+				nodes++;
 				help = help->next;
 				pls = pls->next;
 			}
 			help = help->next;
 			while(help != pls)
 			{
-				count++;
+				nodes++;
 				help = help->next;
 			}
-			return(count);
+			return(nodes);
 		}
 		help = help->next;
 		pls = (pls->next)->next;
 	}
-	
 	return (0);
 }
 
@@ -52,12 +52,12 @@ size_t lop_listint_len(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count, ind;
+	size_t nodes, f;
 
-	count = lop_listint_len(head);
-	if(count == 0)
+	count = looped_listint_len(head);
+	if(nodes == 0)
 	{
-		for (; head != NULL; count++)
+		for (; head != NULL; nodes++)
 		{
 			printf("[%p]%d\n", (void *)head, head->n);
 			head = head->next;
@@ -65,13 +65,12 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	else
 	{
-		for(ind = 0; ind < count; ind++)
+		for (f = 0; f < nodes; f++)
 		{
 			printf("[%p]%d\n", (void *)head, head->n);
 			head = head->next;
 		}
 		printf("->[%p]%d\n", (void *)head, head->n);
 	}
-
-	return (count);
+	return (nodes);
 }
