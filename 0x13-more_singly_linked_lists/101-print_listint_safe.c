@@ -37,7 +37,7 @@ size_t lop_listint_len(const listint_t *head)
 			}
 			return(count);
 		}
-		help = help-> next;
+		help = help->next;
 		pls = (pls->next)->next;
 	}
 	
@@ -52,14 +52,14 @@ size_t lop_listint_len(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count, ind = 0;
+	size_t count, ind;
 
 	count = lop_listint_len(head);
 	if(count == 0)
 	{
 		for (; head != NULL; count++)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
+			printf("[%p]%d\n", (void *)head, head->n);
 			head = head->next;
 		}
 	}
@@ -67,10 +67,10 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		for(ind = 0; ind < count; ind++)
 		{
-			printf("[%p] %d\n", (void *)head, head->n);
+			printf("[%p]%d\n", (void *)head, head->n);
 			head = head->next;
 		}
-		printf("->[%p] %d\n", (void *)head, head->n);
+		printf("->[%p]%d\n", (void *)head, head->n);
 	}
 
 	return (count);
