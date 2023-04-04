@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * print_listint_safe - prints a listint_t linked list.
  * @head: double pointer.
@@ -9,42 +8,20 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	const listint_t *os, *ot;
+	const listint_t *me;
 
-	os = head;
-	ot = head;
-
-	while (os != NULL && os->next != NULL)
+	while (head != NULL)
 	{
-		printf("[%p] %d\n", (void *)ot, ot->n);
+		printf("[%p] %d\n", (void *) head, head->n);
 		count++;
-		ot = ot->next;
-		os = os->next->next;
+		me = head;
+		head = head->next;
 
-		if (ot == os)
+		if (me <= head)
 		{
-			printf("[%p] %d\n", (void *)ot, ot->n);
-			count++;
-			break;
+			printf("-> [%p] %d\n", (void *) head, head->n);
+			exit(98);
 		}
-	}
-	if (os == NULL || os->next == NULL)
-	{
-		while (ot != NULL)
-		{
-			printf("[%p] %d\n", (void *)ot, ot->n);
-			count++;
-			ot = ot->next;
-		}
-	}
-	else
-	{
-		printf("-> [%p] %d\n", (void *)ot, ot->n);
-		count++;
-	}
-	if (count == 0)
-	{
-		printf("NULL\n");
 	}
 	return (count);
 }
