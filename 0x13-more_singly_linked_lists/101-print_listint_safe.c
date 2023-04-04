@@ -24,10 +24,9 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			printf("-> [%p] %d\n", (void *)m, m->n);
 			exit(98);
-			break
 		}
 	}
-	if (m == NULL)
+	if (o <= m)
 	{
 		return (count);
 	}
