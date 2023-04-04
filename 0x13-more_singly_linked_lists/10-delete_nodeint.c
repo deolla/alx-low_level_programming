@@ -3,7 +3,7 @@
 /**
  * delete_nodeint_at_index -  deletes the node at index.
  * @head: double pointer.
- * @index index of node.
+ * @index: index of node.
  *
  * Return: 1 if it succeeded, -1 if it failed.
  */
