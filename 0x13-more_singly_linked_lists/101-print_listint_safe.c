@@ -11,37 +11,38 @@ size_t print_listint_safe(const listint_t *head);
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	const listint_t *help, *pls;
+	const listint_t *tor, *h;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
-	help = head->next;
-	pls = (head->next)->next;
-	while (pls)
+	tor = head->next;
+	h = (head->next)->next;
+	while (h)
 	{
-		if (help == pls)
+		if (tor == h)
 		{
-			help = pls;
-			while (help != pls)
+			tor = head;
+			while (tor != h)
 			{
 				nodes++;
-				help = help->next;
-				pls = pls->next;
+				tor = tor->next;
+				h = h->next;
 			}
-			help = help->next;
-			while (help != pls)
+			tor = tor->next;
+			while (tor != h)
 			{
 				nodes++;
-				help = help->next;
+				tor = tor->next;
 			}
 			return (nodes);
 		}
-		help = help->next;
-		pls = (pls->next)->next;
+		tor = tor->next;
+		h = (h->next)->next;
 	}
 	return (0);
 }
+
 
 /**
  * print_listint_safe - print listint_t list.
