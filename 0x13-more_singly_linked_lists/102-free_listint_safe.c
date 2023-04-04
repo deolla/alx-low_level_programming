@@ -1,4 +1,4 @@
-#include "lists_t"
+#include "lists.h"
 
 /**
  * free_listint_safe - frees a listint_t list.
