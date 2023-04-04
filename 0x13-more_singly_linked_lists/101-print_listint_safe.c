@@ -8,28 +8,27 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	const listint_t *me, *omo;
+	const listint_t *m, *o;
 
-	me = head;
+	m = head;
 
-	while (me != NULL)
+	while (m != NULL)
 	{
-		printf("[%p] %d\n", (void *)me, me->n);
+		printf("[%p] %d\n", (void *)m, m->n);
 		count++;
 
-		omo = me;
-		me = me->next;
+		o = m;
+		m = m->next;
 
-		if (omo <= me)
+		if (o <= m)
 		{
-			printf("-> [%p] %d\n", (void *)me, me->n);
-			break;
+			printf("-> [%p] %d\n", (void *)m, m->n);
+			exit(98);
+			break
 		}
 	}
-	if (me == NULL)
-		return (count);
-	else
+	if (m == NULL)
 	{
-		exit(98);
+		return (count);
 	}
 }
