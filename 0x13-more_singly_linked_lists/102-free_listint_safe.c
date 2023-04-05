@@ -11,19 +11,20 @@ size_t free_listint_safe(listint_t **h)
 	size_t i = 0;
 	listint_t *m = *h, *next = NULL;
 
+	if (h == NULL)
+	{
+		return (i);
+	}
+	m = *h;
+	h* = NULL;
+
 	while (m != NULL)
 	{
 		i++;
-		next = m->next;
-		free(m);
-		m = next;
+		next = m;
+		m = m->next;
+		free(next);
 
-		if (m == *h)
-		{
-			*h = NULL;
-			break;
-		}
 	}
-
 	return (i);
 }
