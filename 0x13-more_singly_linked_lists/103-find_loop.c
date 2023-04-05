@@ -18,7 +18,7 @@ listint_t *find_listint_loop(listint_t *head)
 		head = head->next;
 		q = q->next->next;
 
-		if(head == q)
+		if (head == q)
 		{
 			head = v;
 			v = q;
@@ -29,8 +29,8 @@ listint_t *find_listint_loop(listint_t *head)
 				{
 					q = q->next;
 				}
-				
-				if(q->next == head)
+
+				if (q->next == head)
 					break;
 
 				head = head->next;
