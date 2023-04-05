@@ -24,6 +24,11 @@ size_t free_listint_safe(listint_t **h)
 		m = m->next;
 		free(next);
 		i++;
+
+		if (next < m)
+		{
+			break;
+		}
 	}
 	return (i);
 }
