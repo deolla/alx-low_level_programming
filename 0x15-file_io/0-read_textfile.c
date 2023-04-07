@@ -9,7 +9,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *ppp ;
+	char *ppp;
 	ssize_t pop_r, pop_w;
 	FILE *fp;
 
