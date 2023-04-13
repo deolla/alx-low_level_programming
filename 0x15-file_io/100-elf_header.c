@@ -1,8 +1,80 @@
 #include "main.h"
 
 /**
- * sho_data - print data of ELF.
- * @e_ident: a pointer.
+ * sho_elf - show ELF file.
+ * @e_ident: pointer.
+ *
+ * Return: no return.
+ */
+void sho_elf(unsigned char *e_ident)
+{
+	int pop;
+
+	for (pop = 0; pop < 4; pop++)
+	{
+		if (e_ident[pop] != 127 &&
+		    e_ident[pop] != 'E' &&
+		    e_ident[pop] != 'L' &&
+		    e_ident[pop] != 'F')
+		{
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+			exit(98);
+		}
+	}
+}
+
+/**
+ * sho_magic - show magic number.
+ * @e_ident: pointer.
+ *
+ * Return: no return.
+ */
+void sho_magic(unsigned char *e_ident)
+{
+	int index;
+
+	printf("  Magic:   ");
+
+	for (index = 0; index < EI_NIDENT; index++)
+	{
+		printf("%02x", e_ident[index]);
+
+		if (index == EI_NIDENT - 1)
+			printf("\n");
+		else
+			printf(" ");
+	}
+}
+
+/**
+ * sho_class - show class.
+ * @e_ident: pointer.
+ *
+ * Return: no return.
+ */
+void sho_class(unsigned char *e_ident)
+{
+	printf("  Class:                             ");
+
+	switch (e_ident[EI_CLASS])
+	{
+	case ELFCLASSNONE:
+		printf("none\n");
+		break;
+	case ELFCLASS32:
+		printf("ELF32\n");
+		break;
+	case ELFCLASS64:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	}
+}
+
+/**
+ * sho_data - show data.
+ * @e_ident: pointer.
  *
  * Return: no return.
  */
@@ -27,8 +99,8 @@ void sho_data(unsigned char *e_ident)
 }
 
 /**
- * sho_version - print the version ELF.
- * @e_ident: a pointer.
+ * sho_version - show version.
+ * @e_ident: pointer.
  *
  * Return: no return.
  */
@@ -49,8 +121,8 @@ void sho_version(unsigned char *e_ident)
 }
 
 /**
- * sho_osabi - print OS/ABI of ELF.
- * @e_ident: a pointer.
+ * sho_osabi - show the OS/ABI.
+ * @e_ident: pointer.
  *
  * Return: no return.
  */
@@ -96,21 +168,21 @@ void sho_osabi(unsigned char *e_ident)
 }
 
 /**
- * sho_abi - Prints ABI version of ELF.
- * @e_ident: a pointer.
+ * sho_abi - show the ABI version.
+ * @e_ident: pointer.
  *
  * Return: no return.
  */
 void sho_abi(unsigned char *e_ident)
 {
 	printf("  ABI Version:                       %d\n",
-			e_ident[EI_ABIVERSION]);
+	       e_ident[EI_ABIVERSION]);
 }
 
 /**
- * sho_type - Prints type of ELF.
- * @e_type: type.
- * @e_ident: a pointer.
+ * sho_type - show the type.
+ * @e_type: ELF type.
+ * @e_ident: pointer.
  *
  * Return: no return.
  */
@@ -144,9 +216,9 @@ void sho_type(unsigned int e_type, unsigned char *e_ident)
 }
 
 /**
- * sho_entry - Prints entry point of ELF.
- * @e_entry: address.
- * @e_ident: a pointer.
+ * sho_entry - Prints entry point.
+ * @e_entry: int argument
+ * @e_ident: pointer.
  *
  * Return: no return.
  */
@@ -169,10 +241,10 @@ void sho_entry(unsigned long int e_entry, unsigned char *e_ident)
 }
 
 /**
- * close_elf - Close an ELF file.
- * @elf_t: The file descriptor of the ELF file.
+ * close_elf - Closes an ELF file.
+ * @elf: The file descriptor of the ELF file.
  *
- * Return: no return.
+ * Description: If the file cannot be closed - exit code 98.
  */
 void close_elf(int elf_t)
 {
@@ -185,16 +257,16 @@ void close_elf(int elf_t)
 }
 
 /**
- * main - Displays the information containing ELF.
+ * main - Start of function.
  * @argc: int argument.
  * @argv: char argument.
  *
- * Return: 0 on success.
+ * Return: 0 Always.
  */
 int main(int __attribute__((unused)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
-	int otto, randy;
+	int otto, ran;
 
 	otto = open(argv[1], O_RDONLY);
 	if (otto == -1)
@@ -209,8 +281,8 @@ int main(int __attribute__((unused)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-	randy = read(otto, header, sizeof(Elf64_Ehdr));
-	if (randy == -1)
+	ran = read(otto, header, sizeof(Elf64_Ehdr));
+	if (ran == -1)
 	{
 		free(header);
 		close_elf(otto);
@@ -218,7 +290,7 @@ int main(int __attribute__((unused)) argc, char *argv[])
 		exit(98);
 	}
 
-	assess_elf(header->e_ident);
+	sho_elf(header->e_ident);
 	printf("ELF Header:\n");
 	sho_magic(header->e_ident);
 	sho_class(header->e_ident);

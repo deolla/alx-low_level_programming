@@ -22,7 +22,7 @@ void print_error(char *message, char *file_name, int error_code);
 
 /* 100-elf_header.c */
 
-void assess_elf(unsigned char *e_ident);
+void sho_elf(unsigned char *e_ident);
 void sho_magic(unsigned char *e_ident);
 void sho_class(unsigned char *e_ident);
 void sho_data(unsigned char *e_ident);
