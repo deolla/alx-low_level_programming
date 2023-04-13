@@ -241,10 +241,10 @@ void sho_entry(unsigned long int e_entry, unsigned char *e_ident)
 }
 
 /**
- * close_elf - Closes an ELF file.
- * @elf: The file descriptor of the ELF file.
+ * close_elf - Close ELF file.
+ * @elf_t: file descriptor.
  *
- * Description: If the file cannot be closed - exit code 98.
+ * Return: no return.
  */
 void close_elf(int elf_t)
 {
