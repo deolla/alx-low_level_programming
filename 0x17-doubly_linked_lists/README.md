@@ -27,3 +27,11 @@ Write a function that inserts a new node at a given position
 8. Delete at index
 Write a function that deletes the node at index index of a dlistint_t linked list.
 
+9. Crackme4
+Find the password for crackme4.
+
+10. Palindromes
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+11. crackme5
+Write a keygen for crackme5.
