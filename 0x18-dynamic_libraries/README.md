@@ -1,5 +1,14 @@
-0. A library is not a luxury but one of the necessities of life.
-Create the dynamic library libdynamic.so containing all the functions listed below:
+# Code injection: Win the Giga Millions!
 
-1. Without libraries what have we? We have no past and no future.
-Create a script that creates a dynamic library called liball.so from all the .c files that are in the current directory.
+I bought a ticket for the Giga Millions and chose those numbers: 9, 8, 10, 24, 75 + 9. Can you make me win the Jackpot?
+
+```
+/* Giga Millions program                                                                                    
+  * Players may pick six numbers from two separate pools of numbers:                                                
+  * - five different numbers from 1 to 75 and                                                                       
+  * - one number from 1 to 15                                                                                       
+  * You win the jackpot by matching all six winning numbers in a drawing.                                           
+  * Your chances to win the jackpot is 1 in 258,890,850                                                             
+  *                                                                                                                 
+  * usage: ./gm n1 n2 n3 n4 n5 bonus
+```
