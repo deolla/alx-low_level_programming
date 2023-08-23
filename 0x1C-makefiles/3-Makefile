@@ -15,9 +15,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
-	$(CC) -c $< -o $@
-
 # Rule to clean temporary and executable files
 clean:
 	$(RM) $(OBJ) $(NAME) *~ \#*\# *.swp
