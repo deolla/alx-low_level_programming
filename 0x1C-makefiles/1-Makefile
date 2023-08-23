@@ -1,0 +1,12 @@
+# Makefile
+# Variables
+CC = gcc
+CFLAGS = -Wall -g
+SRC = main.c school.c
+
+# all rule to build executable
+all: school
+
+#compiling the school executable
+school: $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o school
