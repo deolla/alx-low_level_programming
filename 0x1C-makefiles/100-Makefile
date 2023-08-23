@@ -9,10 +9,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY: all clean oclean fclean re
 
 # 'all' rule to build the executable
-all: m.h $(NAME)
-
-# Rule to compile the 'school' executable
-m.h $(NAME): $(OBJ)
+all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 # clean temporary and executable files
