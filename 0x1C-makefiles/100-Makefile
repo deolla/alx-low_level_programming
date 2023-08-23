@@ -6,12 +6,14 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+.PHONY: all clean oclean fclean re
+
 # 'all' rule to build the executable
 all: $(NAME)
 
 # Rule to compile the 'school' executable
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 # clean temporary and executable files
 clean:
@@ -26,17 +28,3 @@ fclean: clean oclean
 
 # Rule to force recompilation of all source files
 re: fclean all
-
-# Remove command
-RM = rm -f
-
-# Object files
-main.o: main.c m.h
-	$(CC) -c main.c -o main.o $(CFLAGS)
-
-school.o: school.c m.h
-	$(CC) -c school.c -o school.o $(CFLAGS)
-
-# Checking for the existence of header file
-m.h:
-	@test -e $@ || (echo "Error: m.h header file is missing!" && exit 1)
