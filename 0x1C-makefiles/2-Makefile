@@ -1,0 +1,15 @@
+# Makefile
+# Variables
+CC = gcc
+CFLAGS = -Wall -g
+SRC = main.c school.c
+OBJ: $(SRC:.c=.o)
+NAME: school
+
+# all rule to build the executable
+all: $(NAME)
+
+# rule to compile the school executable
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
