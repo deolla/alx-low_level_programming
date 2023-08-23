@@ -6,5 +6,7 @@ SRC = main.c school.c
 OBJ: $(SRC:.c=.o)
 NAME: school
 
-all: $(OBJ)
+all: $(NAME)
+
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
