@@ -2,7 +2,7 @@
 # Variable
 
 CC = gcc
-CFLAGS = Wall -g
+CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
@@ -20,7 +20,7 @@ $(NAME): $(OBJ)
 
 # Rule to clean temporary and executable files
 clean:
-	$(RM) $(OBJ) $(NAME) *~ \#*\# *.swp
+	$(RM) $(OBJ) $(NAME)
 
 # Rule to clean object files
 oclean:
