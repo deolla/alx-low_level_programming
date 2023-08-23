@@ -1,8 +1,5 @@
-# First Makefile.
-CC=gcc
+# First Makefile
+CC = gcc
 CFLAGS = -Wall -g
-
-all: school
-
-school: main.c
-	$(CC) $(CFLAGS) -o school main.c
+all: main.c school.c
+	$(CC) $(CFLAGS) main.c school.c -o school
