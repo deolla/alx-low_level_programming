@@ -1,0 +1,34 @@
+#Makefile
+#Variable
+
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+
+# builds your executable
+all: $(NAME)
+
+# Rule to compile the 'school' executable
+$(NAME): $(OBJ)
+        $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+# Rule to compile source files to object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Rule to clean temporary and executable files
+clean:
+	$(RM) *~ $(NAME)
+
+# Rule to clean object files
+oclean:
+	$(RM) $(OBJ)
+
+#claen temorary files, executable and object files
+fclean: clean oclean
+
+#force recompilation of all source files
+re: fclean all
