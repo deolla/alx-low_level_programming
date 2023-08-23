@@ -15,10 +15,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
         $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-# Rule to compile source files to object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 # Rule to clean temporary and executable files
 clean:
 	$(RM) *~ $(NAME)
