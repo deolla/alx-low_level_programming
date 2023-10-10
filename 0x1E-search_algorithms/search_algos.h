@@ -15,5 +15,5 @@ int advanced_binary(int *array, size_t size, int value);
 
 /** Helper function **/
 int _binary_search(int *array, size_t left, size_t right, int value);
-
+int recursive_advanced_binary(int *array, size_t left, size_t right, int value);
 #endif /*SEARCH_ALGOS*/
